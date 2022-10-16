@@ -8,6 +8,11 @@ public class Application {
     public static void main(String[] args) {
         System.out.println("Hello world");
 
+        String myStaticFiled = MyClass2.MY_STATIC_FILED;
+        MyClass2 myClass1 = new MyClass2();
+        MyClass2 myClass2 = new MyClass2();
+        MyClass2 myClass3 = new MyClass2();
+
         MyClass2 myClass = new MyClass2();
 //        myClass.field2 = "Field2";
         myClass.field3 = "Field3";
@@ -17,6 +22,13 @@ public class Application {
         myClass.run4();
 
         myClass.run();
+
+        int testVar = 5;
+        int newTestVar = testMethod(testVar);
+        System.out.println("testVar " + testVar);
     }
 
+    public static int testMethod(int testVar) {
+        return testVar * 2;
+    }
 }
