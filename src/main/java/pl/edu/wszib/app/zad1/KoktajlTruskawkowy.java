@@ -1,24 +1,23 @@
 package pl.edu.wszib.app.zad1;
 
-public class KoktajlTruskawkowy extends Koktajl implements Smakowalne {
+public class KoktajlTruskawkowy extends KoktajlSmakowy{
+
     private final RodzajTruskawki rodzajTruskawki;
 
     public KoktajlTruskawkowy(
             final int kcal,
-            final RodzajTruskawki rodzajTruskawki) {
-        super(kcal);
+            final RodzajTruskawki rodzajTruskawki){
+        super(kcal, RodzajSmaku.TRUSKAWKOWY);
         this.rodzajTruskawki = rodzajTruskawki;
+    };
+
+    @Override
+    public void pij(){
+        System.out.println("Pije koktajl o smaku " + smak() + ", ktore cechuje sie " + rodzajTruskawki.cecha() + ".");
     }
 
     @Override
-    public void pij() {
-        String message = String.format("Pije koktajl %s, która cechuje się %s", smak(), rodzajTruskawki.cecha());
-        System.out.println("Pije koktajl " + smak() + ", która cechuje się " + rodzajTruskawki.cecha());
-        System.out.println(message);
-    }
-
-    @Override
-    public String smak() {
-        return "Truskawkowy";
+    public RodzajSmaku smak(){
+        return super.smak();
     }
 }
